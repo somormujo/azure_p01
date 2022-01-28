@@ -50,6 +50,7 @@ Bandit policy is an **agressive** early termination policy based on slack criter
 Auto ML creates and fit different machine learning models with the same trainning data and compares how well they fit. In our case the comparision is done over the accuracy (maximize).
 
 31 models were run during the AutoML evaluation:
+<pre>
 ITER   PIPELINE                                       DURATION            METRIC      BEST
     0   MaxAbsScaler LightGBM                          0:00:12             0.9147    0.9147
     1   MaxAbsScaler XGBoostClassifier                 0:00:15             0.9152    0.9152
@@ -82,7 +83,8 @@ ITER   PIPELINE                                       DURATION            METRIC
    28   SparseNormalizer LightGBM                      0:00:32             0.9057    0.9152
    29   StandardScalerWrapper XGBoostClassifier        0:01:19             0.9105    0.9152
    30    VotingEnsemble                                0:00:50             0.9162    0.9162
-   
+</pre>
+
 The most accurate was VotingEnsemble, and an honorable mention is XGBoostClassifier (MaxAbsScaler)
 
 ## Pipeline comparison
@@ -96,9 +98,14 @@ The AutoML method allows us to explore the performance of several different mode
 
 ### HyperParameter Logistic Regression
 Some images about the performance of the logistic regression hyperparameters.
+![Accuracy vs Max Iterations](https://github.com/somormujo/azure_p01/blob/main/Hyper-AccuracyvsIter.png)
+![Accuracy of the different experiments](https://github.com/somormujo/azure_p01/blob/main/Hyper-Experiments.png)
 
 ### AutoML Voting Ensemble
 Some images about the performance of the voting ensemble.
+![Main Contributing Features](https://github.com/somormujo/azure_p01/blob/main/AutoML-Features.png)
+![Precision and ROC](https://github.com/somormujo/azure_p01/blob/main/AutoML-PrecisionROC.png)
+![Gain](https://github.com/somormujo/azure_p01/blob/main/AutoML-Gain.png)
 
 ## Future work
 **What are some areas of improvement for future experiments? Why might these improvements help the model?**
