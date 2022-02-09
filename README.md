@@ -1,5 +1,5 @@
 # Optimizing an ML Pipeline in Azure
-
+## Test
 ## Overview
 This project is part of the Udacity Azure ML Nanodegree.
 In this project, we build and optimize an Azure ML pipeline using the Python SDK and a provided Scikit-learn model.
@@ -24,8 +24,8 @@ The autoML model with Voting Ensemble achieved a maximum accuracy of 91.62%. It'
 **Explain the pipeline architecture, including data, hyperparameter tuning, and classification algorithm.**
 The steps of the scikit-learn pipeline are the following:
 1. Define the arguments for the Logistic Regression (--C for inverse regularization and --max_iter for the maximum number of iterations to converge to a solution)
-    1. This information is coming from the notebook through a random parameter sampling. 
-    2. Regularization the options are 01, 1, 1.4 
+    1. This information is coming from the notebook through a random parameter sampling.
+    2. Regularization the options are 01, 1, 1.4
     3. Max iterations 60, 80, 100, 120, 140
 2. Log the used parameters (coming from the notebook)
 3. Load the dataset from Azure ML examples library
@@ -111,12 +111,12 @@ Some images about the performance of the voting ensemble.
 **What are some areas of improvement for future experiments? Why might these improvements help the model?**
 As mentioned before it would be a good idea to execute hyperparameters in the best 2 AutoML models (XGBoostClassifier and Voting Ensemble)
 
-In the training data, there are 3600 persons that **agreed** to the deposit, while there are +29000 persons that did **NOT agree** to the deposit. This creates a training data that is not very evenly distributed. A dumb classifier that always says person will not agree to the deposit is having a wooping 88.79% of accuracy (less than 3% away of the best model). Here we can see that machine learning models do not perform well when the data is not balanced. 
+In the training data, there are 3600 persons that **agreed** to the deposit, while there are +29000 persons that did **NOT agree** to the deposit. This creates a training data that is not very evenly distributed. A dumb classifier that always says person will not agree to the deposit is having a wooping 88.79% of accuracy (less than 3% away of the best model). Here we can see that machine learning models do not perform well when the data is not balanced.
 
 Ideas to improve this:
 * Get more samples of people agreeing to the deposit
     * Synthetically (generating the data ourselves)
     * Manually (getting more data from other sources)
-* Remove people that did not agree to the deposit 
+* Remove people that did not agree to the deposit
     * This will make the training set smaller
     * But it will be more evenly distributed
